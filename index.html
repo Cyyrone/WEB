@@ -1,128 +1,201 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ASSIGNMENT#2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: left;
+            margin-top: 50px;
+        }
+        .container {
+            background-color: rgb(73, 81, 151);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: auto;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+        }
+
+        .container-open {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .problem-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-label {
+            width: 100px;
+            font-weight: bold;
+        }
+
+        h3 {
+            color: rgb(19, 19, 20);
+            text-align: left;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+     h4{
+         text-align: right;
+     }
+    </style>
 </head>
 <body>
-    <div class="h1">
-        <h1>BIO DATA</h1>
-    </div>
-    <div class="h3">
-        <h3>PERSONAL INFORMATION </h3>
-    </div>
-    <div class="container">
-        <table>
-            <tbody>
-                <tr>
-                    <td>Position Desired</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td>Date</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td>Gender</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>City</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Personal address</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Telephone</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td>Cellphone</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>E-mail Adress</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Date of Birth</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td>Birth of Place</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td>Civil Status</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td>Citizenship</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                    
-            </tbody>
-        </table>
-        <div class="h3">
-        <h3> EDUCATIONAL BACKGROUND</h3>
+    
+    <h4> Xyron J. Balasabas</h4>
+    <h4> BSIT 2B</h4>
+    
+    
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 1</div>
+        <button id="toggleProblem1" onclick="toggleContainer('container1')">Show</button>
+        <div id="container1" class="container">
+            <h3>Problem 1: Triangle Area Calculator</h3>
+            <form id="triangle-form">
+                <input type="number" id="base" placeholder="Enter base" step="any" required>
+                <input type="number" id="height" placeholder="Enter height" step="any" required>
+                <br><br>
+                <button type="button" onclick="calculateArea()">Calculate Area</button>
+            </form>
+            <p id="result1"></p>
         </div>
-        <table>
-            <tbody>
-                <tr> 
-                    <td> Elementary</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td> High School</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                </tr>
-                <tr>
-                    <td> College</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-                    <td> Degree</td>
-                    <td>:</td>
-                    <td><input type="text"></td>
-
-                </tr>
-            </tbody>
-        </table>
-        <div class="h3">
-            <h3> CHARACTER REFERENCE</h3>
-            </div>
-            <table>
-                <tbody>
-                    <tr> 
-                        <td> Name</td>
-                        <td>:</td>
-                        <td><input type="text"></td>
-                        <td> Position</td>
-                        <td>:</td>
-                        <td><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td> Company</td>
-                        <td>:</td>
-                        <td><input type="text"></td>
-                        <td> Contact No.</td>
-                        <td>:</td>
-                        <td><input type="text"></td>
-        
-                    </tr>
-                </tbody>
-            </table>
     </div>
-    <button>Submit</button>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 2</div>
+        <button id="toggleProblem2" onclick="toggleContainer('container2')">Show</button>
+        <div id="container2" class="container">
+            <h3>Problem 2: Average Calculator</h3>
+            <form onsubmit="event.preventDefault(); calculateAverage();">
+                <input type="number" id="num1" placeholder="Enter first number" required><br>
+                <input type="number" id="num2" placeholder="Enter second number" required><br>
+                <input type="number" id="num3" placeholder="Enter third number" required><br>
+                <input type="number" id="num4" placeholder="Enter fourth number" required><br>
+                <input type="number" id="num5" placeholder="Enter fifth number" required><br>
+                <button type="button" onclick="calculateAverage()">Calculate Average</button>
+            </form>
+            <p id="result2"></p>
+        </div>
+    </div>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 3</div>
+        <button id="toggleProblem3" onclick="toggleContainer('container3')">Show</button>
+        <div id="container3" class="container">
+            <h3>Problem 3: Convert Celsius to Fahrenheit</h3>
+            <form>
+                <label for="celsius">Celsius Temperature:</label>
+                <input type="number" id="celsius" required>
+                <br><br>
+                <button type="button" onclick="convertCelsiusToFahrenheit()">Convert</button>
+            </form>
+            <p id="result3"></p>
+        </div>
+    </div>
+
+    <div class="problem-wrapper">
+        <div class="problem-label">Problem 4</div>
+        <button id="toggleProblem4" onclick="toggleContainer('container4')">Show</button>
+        <div id="container4" class="container">
+            <h3>Asterisk Display</h3>
+            <label for="numStars">Number of Rows:</label>
+            <input type="number" id="numStars" min="1" placeholder="Enter rows">
+            <br><br>
+            <button type="button" onclick="displayPattern()">Display Asterisk</button>
+            <pre id="result4"></pre>
+        </div>
+    </div>
+
+    <script>
+        function toggleContainer(containerId) {
+            const container = document.getElementById(containerId);
+            const button = document.querySelector([onclick="toggleContainer('${containerId}')"]);
+
+            if (container.classList.contains('container-open')) {
+                container.classList.remove('container-open');
+                button.innerText = 'Show';
+            } else {
+                container.classList.add('container-open');
+                button.innerText = 'Hide';
+            }
+        }
+
+        function calculateArea() {
+            let base = document.getElementById("base").value;
+            let height = document.getElementById("height").value;
+
+            base = parseFloat(base);
+            height = parseFloat(height);
+            
+            if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+                alert("Please enter valid positive numbers for base and height.");
+                return;
+            }
+
+            let area = (base * height) / 2;
+            document.getElementById("result1").textContent = "The area of the triangle is: " + area;
+        }
+
+        function calculateAverage() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let num3 = parseFloat(document.getElementById("num3").value);
+            let num4 = parseFloat(document.getElementById("num4").value);
+            let num5 = parseFloat(document.getElementById("num5").value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+                alert("Please enter valid numbers in all fields.");
+                return;
+            }
+
+            let sum = num1 + num2 + num3 + num4 + num5;
+            let average = sum / 5;
+            document.getElementById("result2").textContent = "The average is: " + average;
+        }
+
+        function convertCelsiusToFahrenheit() {
+            const celsius = parseFloat(document.getElementById("celsius").value);
+            const fahrenheit = (celsius * 9 / 5) + 32;
+            document.etEementById("result3").textContent = '${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F';
+        }
+
+        function displayPattern() {
+            const numStars = parseInt(document.getElementById("numStars").value);
+            let pattern = "";
+
+            for (let i = 1; i <= numStars; i++) {
+                pattern += "* ".repeat(i) + "\n";
+            }
+
+            document.getElementById("result4").textContent = pattern;
+        }
+    </script>
 </body>
 </html>
